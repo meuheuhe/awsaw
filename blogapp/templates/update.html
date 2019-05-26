@@ -1,0 +1,36 @@
+{% extends 'base.html'%}
+
+<body>
+{% block contents %}
+<br><br><br><br><br><br><br>
+<div class="container">
+        <div class="alert alert-dark" role="alert" style="text-align: center; border-width: 5px;">
+                <h3>----------------EDIT PAGE----------------</h3>
+        </div>
+
+    <div class="card" style="border-color: black; border-width: 5px; height: 500px; margin: 30px;">
+            <div class="card-body" >
+    <form action="{% url 'edit' updates.id%}" method="POST">
+        {% csrf_token %}
+        <h4>TITLE</h4>
+        <input class="form-control form-control-lg" type="text" placeholder="write title" name="title" value={{updates.title}}>
+        <!----<input type="text" name="title" value={{updates.title}}>-->
+        <br>
+        <br>
+        <h4>CONTENTS</h4>
+        <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="body" style="height: 200px;">{{updates.body}}</textarea>
+        </div>
+        <br>
+        <input class="btn btn-dark" type="submit" value="UPDATE CONTENT">
+        </form>
+        <!-----<textarea cols=40 rows=10 name="body">{{updates.body}}</textarea>-->
+        
+        
+    </form>
+    </div>
+    </div>
+</div>
+
+{% endblock %}
+</body>

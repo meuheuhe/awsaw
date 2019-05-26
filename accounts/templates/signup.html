@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<body>
+{% block contents %}
+<br><br><br><br><br><br>
+
+
+<div class="container">
+        <div class="alert alert-dark" style="text-align: center; border-width: 5px; background-color: pink; border-color:salmon;">
+                <h3>----------------SIGN UP!----------------</h3>
+        </div>
+        <div class="card" style="border-color: black; border-width: 5px; height: 500px; width: 500px; margin: 60px 300px; text-align: center;">
+        <div class="card-body" >
+            <form method = "POST" action="{%url 'signup'%}">
+                    {% csrf_token %}
+                    <!-- Username: -->
+                    <br>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Username</label>
+                        <input name="username" type="text" class="form-control" id="formGroupExampleInput" placeholder="name">
+                    </div>
+                    <!-- <input name="username" type="text" value=""> -->
+                    <br>
+                    <!-- Password: -->
+                    
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input name="password1" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                    </div>
+                    <!-- <input name="password1" type="password" value=""> -->
+                    
+                    <!-- Confirm Password: -->
+                    <br>
+                    <div class="form-group">
+                            <label for="exampleInputPassword1">Confirm Password</label>
+                            <input name="password2" type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                    </div>
+                    <!-- <input name="password2" type="password" value=""> -->
+                    <br>
+                    <br>
+                    <input class="btn btn-primary" type="submit" value="Sign Up!">
+            </form>
+        </div>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
