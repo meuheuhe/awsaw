@@ -2,7 +2,7 @@ astroid==2.1.0
 colorama==0.4.1
 cycler==0.10.0
 dj-database-url==0.5.0
-Django==2.1.5
+Django==2.2.13
 django-crispy-forms==1.7.2
 django-disqus==0.5
 django-wysiwyg==0.8.0
